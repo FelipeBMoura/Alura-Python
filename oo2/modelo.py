@@ -19,11 +19,17 @@ class Programa:
     def dar_like(self):
         self._likes += 1
 
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self._likes} Likes'
+
 
 class Filme(Programa):
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)
         self.duracao = duracao
+
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self.duracao} min - {self._likes} Likes'
 
     def retorna_cadastro_diferenciado(self):
         pass
@@ -33,6 +39,9 @@ class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
+
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self.temporadas} temporadas - {self._likes} Likes'
 
 
 vingadores = Filme('Vingadores - guerra infinita', 2018, 160)
@@ -48,3 +57,9 @@ atlanta.dar_like()
 atlanta.dar_like()
 
 print(f'{atlanta.nome} - {atlanta.ano} - {atlanta.temporadas}: {atlanta.likes}')
+
+filmes_series = [vingadores, atlanta]
+
+for programa in filmes_series:
+    # detalhes = programa.duracao if hasattr(programa, 'duracao') else programa.temporadas
+    print(programa)
