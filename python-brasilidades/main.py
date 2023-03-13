@@ -11,5 +11,5 @@ exemplo_cpf = "32007832062"
 # cnpj = CNPJ()#
 # print(cnpj.validate(exemplo_cnpj))
 
-documento = Documento.cria_documento(exemplo_cpf)
+documento = Documento.cria_documento(exemplo_cnpj)
 print(documento)
