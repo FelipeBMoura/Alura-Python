@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+from audioop import reverse
 
 
 class Conta(metaclass=ABCMeta):
@@ -127,3 +128,13 @@ usuarios = [
 
 for nome, idade, nascimento in usuarios:
     print(nome)
+
+print(sorted(idades))
+
+print(list(reversed(idades)))
+
+print(sorted(idades, reverse=True))
+
+idades.sort()
+
+print(idades)
