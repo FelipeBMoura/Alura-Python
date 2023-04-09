@@ -79,6 +79,9 @@ class ContaSalario:
             return False
         return self._codigo == outro._codigo and self._saldo == outro._saldo
 
+    def __lt__(self, outro):
+        return self._saldo < outro._saldo
+
     def deposita(self, valor):
         self._saldo += valor
 
@@ -138,3 +141,31 @@ print(sorted(idades, reverse=True))
 idades.sort()
 
 print(idades)
+
+print(15 < 32)
+
+nomes = ['guilherme', 'Daniela', 'paulo']
+print(sorted(nomes))
+
+conta_do_guilherme = ContaSalario(17)
+conta_do_guilherme.deposita(500)
+
+conta_da_daniela = ContaSalario(3)
+conta_da_daniela.deposita(1000)
+
+conta_do_paulo = ContaSalario(133)
+conta_do_paulo.deposita(510)
+
+contas = [conta_do_guilherme, conta_da_daniela, conta_do_paulo]
+
+from operator import attrgetter
+
+for conta in sorted(contas, key=attrgetter("_saldo")):
+    print(conta)
+
+print(conta_do_guilherme < conta_da_daniela)
+
+print(conta_do_guilherme > conta_da_daniela)
+
+for conta in sorted(contas):
+    print(conta)
