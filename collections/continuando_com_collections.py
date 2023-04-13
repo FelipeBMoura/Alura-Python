@@ -56,3 +56,47 @@ meu_texto = "Bem vindo meu nome é Guilherme, eu gosto muito de nomes e tenho o 
 print(meu_texto.split())
 
 print(set(meu_texto.split()))
+
+aparicoes = {
+    "Guilherme": 1,
+    "cachorro": 2,
+    "nome": 2,
+    "vindo": 1,
+}
+
+print(type(aparicoes))
+
+print(aparicoes['Guilherme'])
+
+aparicoes['Carlos'] = 1
+
+print(aparicoes)
+
+aparicoes['Carlos'] = 2
+
+print(aparicoes)
+
+del aparicoes['Carlos']
+
+print(aparicoes)
+
+print('Carlos' in aparicoes)
+
+for elementos in aparicoes:
+    print(elementos)
+
+for elementos in aparicoes.keys():
+    print(elementos)
+
+for elementos in aparicoes.values():
+    print(elementos)
+
+print(1 in aparicoes.values())
+
+for elementos in aparicoes.items():
+    print(elementos)
+
+for chave, valor in aparicoes.items():
+    print(chave, '=', valor)
+
+print([f'Palavra {chave}' for chave in aparicoes.keys()])
