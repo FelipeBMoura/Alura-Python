@@ -1,3 +1,5 @@
+from email.policy import default
+
 usuarios_data_science = [15, 23, 43, 56]
 
 usuarios_machine_learning = [13, 23, 43, 42]
@@ -100,3 +102,38 @@ for chave, valor in aparicoes.items():
     print(chave, '=', valor)
 
 print([f'Palavra {chave}' for chave in aparicoes.keys()])
+
+meu_texto = meu_texto.lower()
+
+aparicoes = {}
+
+for palavra in meu_texto.split():
+    ate_agora = aparicoes.get(palavra, 0)
+    aparicoes[palavra] = ate_agora + 1
+
+print(aparicoes)
+
+from collections import defaultdict
+
+aparicoes = defaultdict(int)
+
+for palavra in meu_texto.split():
+    aparicoes[palavra] += 1
+
+print(aparicoes)
+
+
+class Conta:
+    def __init__(self):
+        print('Criando conta.')
+
+
+contas = defaultdict(Conta)
+
+print(contas[15])
+
+from collections import Counter
+
+aparicoes = Counter(meu_texto.split())
+
+print(aparicoes)
